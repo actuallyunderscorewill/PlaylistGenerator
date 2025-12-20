@@ -47,7 +47,7 @@ class playlist(object):
     def save(self):
         if path.exists(self.savepath):
             os.remove(self.savepath)
-        playlistFile = open(self.savepath,'w')
+        playlistFile = open(self.savepath, 'w', encoding='utf-8')
         playlistFile.write('#EXTM3U\n')
         for musicobj in self.music:
             try:
@@ -58,8 +58,8 @@ class playlist(object):
                                    +'\n')
                 playlistFile.write(str(musicobj.optimalFormat)+'\n')
             except Exception as e:
-                print(e)
                 print(musicobj.optimalFormat)
+                print(e)
                 continue
         playlistFile.close()
         
