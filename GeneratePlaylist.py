@@ -47,7 +47,7 @@ class playlist(object):
     def save(self):
         if path.exists(self.savepath):
             os.remove(self.savepath)
-        playlistFile = open(self.savepath,'w')
+        playlistFile = open(self.savepath, 'w', encoding='utf-8')
         playlistFile.write('#EXTM3U\n')
         for musicobj in self.music:
             try:
