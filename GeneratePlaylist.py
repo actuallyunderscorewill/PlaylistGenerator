@@ -58,8 +58,8 @@ class playlist(object):
                                    +'\n')
                 playlistFile.write(str(musicobj.optimalFormat)+'\n')
             except Exception as e:
-                print(e)
                 print(musicobj.optimalFormat)
+                print(e)
                 continue
         playlistFile.close()
         
